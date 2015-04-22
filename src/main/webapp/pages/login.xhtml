@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      lang="pt_BR">
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="#{request.contextPath}/resources/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="#{request.contextPath}/resources/css/normalize.css"></link>
+    <style type="text/css">
+        /* Override some defaults */
+        html, body {
+            background-color: #eee;
+        }
+        body {
+            padding-top: 40px;
+        }
+
+        form {
+            width: 95%;
+        }
+
+        h2 {
+            color: lightgrey;
+        }
+
+        .container {
+            width: 630px;
+        }
+
+        /* The white background content wrapper */
+        .container > .content {
+            background-color: #fff;
+            padding: 20px;
+            margin: 0 -20px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            -moz-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+            box-shadow: 0 1px 2px rgba(0,0,0,.15);
+        }
+
+        .logo {
+            float: right;
+        }
+    </style>
+</h:head>
+<f:view>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Lado Esquerdo -->
+            <div class="col-xs-6 col-md-4">
+                <h3>Menu de contexto</h3>
+
+            </div>
+
+            <!-- Lado Direito -->
+            <div class="col-xs-12 col-md-8">
+                <div class="row">
+                    <h4>Login de Acesso</h4>
+                </div>
+                <div class="row col-md-6 col-md-offset-3">
+
+                    <h:form action="#" role="form">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <h:inputText id="exampleInputEmail1" styleClass="form-control" value="#{loginBean.usuario.email}" placeholder="Enter email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Senha</label>
+                            <h:inputSecret class="form-control" id="exampleInputPassword1" placeholder="Password" value="#{loginBean.usuario.senha}"/>
+                        </div>
+                        <h:commandButton action="#{loginBean.logar()}" value="Entrar" styleClass="btn btn-default" />
+
+                    </h:form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</f:view>
+</html>

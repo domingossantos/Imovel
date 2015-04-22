@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      lang="pt_BR"
+        ng-app="Imovel">
+<h:head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+    <link rel="stylesheet" href="#{request.contextPath}/resources/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="#{request.contextPath}/resources/css/normalize.css"></link>
+</h:head>
+<f:view>
+    <h:body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                Topo
+            </div>
+        </div>
+        <div class="row">
+            <!-- Lado Esquerdo -->
+            <div class="col-xs-7 col-md-3">
+                <h:form>
+                    <h3>Menu de contexto</h3>
+                    <p><h:outputText value="Usuário Logado: #{loginBean.usuario.email}" /></p>
+
+                    <div class="list-group" ng-controller="MenuController">
+                        <a href="#" ng-click="selecionaMenu(1)" class="list-group-item"  ng-class="{ active: menuSelecionado(1)}">inicio</a>
+                        <a href="#" ng-click="selecionaMenu(2)" class="list-group-item"  ng-class="{ active: menuSelecionado(2)}">Meus Imoveis</a>
+                        <a href="#" ng-click="selecionaMenu(3)" class="list-group-item" ng-class="{ active: menuSelecionado(3)}">Parceiros</a>
+                        <a href="#" ng-click="selecionaMenu(4)" class="list-group-item" ng-class="{ active: menuSelecionado(4)}">Clientes</a>
+                        <a href="#" ng-click="selecionaMenu(5)" class="list-group-item" ng-class="{ active: menuSelecionado(5)}">Favoritos</a>
+                        <a href="#" ng-click="selecionaMenu(6)" class="list-group-item" ng-class="{ active: menuSelecionado(6)}">Negociações</a>
+                    </div>
+
+                    <p><h:commandLink action="#{loginBean.sair()}" value="Sair">
+                        <span class="glyphicon glyphicon-off"></span>
+                    </h:commandLink></p>
+                </h:form>
+            </div>
+
+            <!-- Lado Direito -->
+            <div class="col-xs-12 col-md-9">
+                <h:form>
+                <ui:insert name="conteudo"></ui:insert>
+                </h:form>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="#{request.contextPath}/resources/js/jquery-2.0.0.min.js"></script>
+    <script src="#{request.contextPath}/resources/js/angular.js"></script>
+    <script src="#{request.contextPath}/resources/js/app.js"></script>
+
+    </h:body>
+</f:view>
+</html>

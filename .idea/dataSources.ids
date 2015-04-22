@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - imovel@localhost" uuid="75fa0c9c-5318-4f7d-bdad-13915a51cb86">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source name="imovelPU" uuid="0fd7cff6-50b7-4be9-8f31-eb0d30ad880c">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
